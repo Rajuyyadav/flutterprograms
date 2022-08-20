@@ -1,0 +1,4 @@
+#Mon Jun 13 16:47:18 IST 2022
+base.0=C\:\\Users\\tech\\StudioProjects\\mysecond_app_for_button\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
