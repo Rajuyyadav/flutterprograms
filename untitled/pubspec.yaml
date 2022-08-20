@@ -1,0 +1,135 @@
+name: untitled
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.5 <3.0.0"
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  image_picker: ^0.8.5+3
+  line_chart: ^1.1.11
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/singlecsvimg/img.png
+    - assets/singlecsvimg/img_1.png
+    - assets/singlecsvimg/img_2.png
+    - assets/singlecsvimg/img_3.png
+    - assets/singlecsvimg/img_4.png
+    - assets/singlecsvimg/img_5.png
+    - assets/singlecsvimg/img_6.png
+    - assets/singlecsvimg/img_7.png
+    - assets/singlecsvimg/img_8.png
+    - assets/singlecsvimg/img_9.png
+    - assets/singlecsvimg/res_img1.png
+    - assets/grid1img/gimg.png
+    - assets/grid1img/gimg_1.png
+    - assets/grid1img/gimg_2.png
+    - assets/grid1img/gimg_3.png
+    - assets/grid1img/gimg_4.png
+    - assets/grid1img/gimg_5.png
+    - assets/grid1img/gimg_6.png
+    - assets/grid1img/gimg_7.png
+    - assets/offerimg/offimg.png
+    - assets/offerimg/offimg_1.png
+    - assets/offerimg/offimg_2.png
+    - assets/offerimg/offimg_3.png
+    - assets/offerimg/offimg_4.png
+    - assets/gridrow1/grimg.png
+    - assets/gridrow1/grimg_1.png
+    - assets/gridrow1/grimg_2.png
+    - assets/gridrow1/grimg_3.png
+    - assets/gridrow1/grimg_4.png
+    - assets/gridrow1/grimg_5.png
+    - assets/singleimage/siimg.png
+    - assets/singleimage/siimg_1.png
+    - assets/singleimage/siimg_2.png
+    - assets/singleimage/siimg_3.png
+    - assets/singleimage/siimg_4.png
+    - assets/singleimage/siimg_5.png
+    - assets/newlineimg/nlimg_1.png
+    - assets/newlineimg/nlimg_2.png
+    - assets/newlineimg/nlimg_3.png
+    - assets/newlineimg/nlimg_4.png
+    - assets/newlineimg/nlimg_5.png
+    - assets/newlineimg/nlimg_6.png
+#    - assets/newlineimg/nlimg_7.png
+
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
