@@ -10,7 +10,7 @@ class Cart {
   final String? image;
 
   Cart({
-    required this.id,
+     this.id,
     required this.productId,
     required this.productName,
     required this.initialPrice,
@@ -28,6 +28,24 @@ class Cart {
   quantity=res['quantity'],
   unitTag=res['unitTag'],
   image=res['image'];
+
+
+   Cart copyWith({int? quantity}) =>
+       Cart(productId: productId,
+           productName: productName,
+           initialPrice: initialPrice,
+           productPrice: productPrice,
+           quantity: quantity?? this.quantity,
+           unitTag: unitTag,
+           image: image);
+
+   Cart decreaseQuantity(){
+     return copyWith(quantity: (quantity?? 1) - 1);
+   }
+
+  Cart increaseQuantity(){
+    return copyWith(quantity: (quantity?? -1) + 1);
+  }
 
 
   Map<String, Object?> toJson(){

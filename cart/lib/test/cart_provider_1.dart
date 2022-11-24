@@ -1,38 +1,74 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:project10d/test/cart_model_1.dart';
+import 'package:project10d/test/db_helper_1.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'cart_model.dart';
-import 'db_helper.dart';
 
-class CartProvider with ChangeNotifier {
+class CartProvider_1 with ChangeNotifier {
   DBHelper db = DBHelper();
 
-  int _counter = 0;
-  int get counter => _counter;
+  int get counter => cart.isEmpty? 0: cart.map((e) => e.quantity?? 0).reduce((value, element) => value + element );
+  double get totalPrice => cart.isEmpty? 0: cart.map((e) => (e.quantity?? 0) * (e.productPrice?? 0)).reduce((value, element) => value + element ).toDouble();
+
+  int _quantity = 1;
+  int get quantity => _quantity;
 
   double _totalPrice = 0.0;
-  double get totalPrice => _totalPrice;
 
-  late Future<List<Cart>> _cart;
-  Future<List<Cart>> get cart => _cart;
+
+  List<Cart> cart = [];
+
+  CartProvider_1(){
+    getData();
+  }
+
 
   Future<List<Cart>> getData() async {
-    _cart = db.getCartList();
-    return _cart;
+    cart = await db.getCartList();
+    notifyListeners();
+    return cart;
+  }
+
+  void deleteItem(int index) async{
+    await db.delete(cart[index].productId!);
+    await getData();
+    notifyListeners();
+  }
+
+  void insertOrUpdateItem(Cart cart) async{
+    await db.insert(cart);
+    await getData();
+    notifyListeners();
+
   }
 
   void _setPrefItems() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setInt("cart_item", _counter);
+    prefs.setInt("item_quantity", _quantity);
     prefs.setDouble("total_price", _totalPrice);
     notifyListeners();
   }
 
   void _getPrefItems() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    _counter = prefs.getInt("cart_item") ?? 0;
+    _quantity = prefs.getInt("item_quantity") ?? 0;
     _totalPrice = prefs.getDouble("total_price") ?? 0.0;
     notifyListeners();
   }
+
+//========================priceCounter================
+  void addCounter() {
+
+    _setPrefItems();
+    notifyListeners();
+  }
+
+  void removeCounter() {
+    _setPrefItems();
+    notifyListeners();
+  }
+
 
   //========================totalPriceCounter================
   void addTotalPrice(double productPrice) {
@@ -48,25 +84,23 @@ class CartProvider with ChangeNotifier {
   }
 
   double getTotalPrice() {
+    _totalPrice;
     _getPrefItems();
     return _totalPrice;
   }
+//=====================================
 
-//========================priceCounter================
-  void addCounter() {
-    _counter++;
-    _setPrefItems();
-    notifyListeners();
-  }
+  List<Cart>? _dataa = []; //when the list of object doesn't have name  {[....]}
+  List<Cart>? get dataa => _dataa;
 
-  void removeCounter() {
-    _counter--;
-    _setPrefItems();
-    notifyListeners();
-  }
+  Future<List<Cart>?> loadJsonData() async {
+    final String jsonText =
+        await rootBundle.loadString("assets/currylistitems.json");
+    final newData = json.decode(jsonText);
 
-  int getCounter() {
-    _getPrefItems();
-    return _counter;
+    _dataa = List<Cart>.from(newData.map((model) => Cart.fromJson(model)));
+
+    print(_dataa?[0].productName);
+    return _dataa;
   }
 }
