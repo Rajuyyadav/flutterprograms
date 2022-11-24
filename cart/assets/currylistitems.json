@@ -1,0 +1,75 @@
+
+[
+  {
+  "id":1,
+  "productId":"1",
+  "productName":"Kadai_Paneer_Gravy",
+  "initialPrice":100,
+  "productPrice":100,
+  "quantity":1,
+  "unitTag":"pac",
+  "image":"assets/image/veg_curry/Kadai_Paneer_Gravy.png"
+},
+  {
+    "id":2,
+    "productId":"2",
+    "productName":"Palak_Paneer",
+    "initialPrice":150,
+    "productPrice":150,
+    "quantity":1,
+    "unitTag":"pac",
+    "image":"assets/image/veg_curry/Palak_Paneer.png"
+},
+  {
+    "id":3,
+    "productId":"3",
+    "productName":"Mix_Vegetable_Kofta",
+    "initialPrice":120,
+    "productPrice":120,
+    "quantity":1,
+    "unitTag":"pac",
+    "image":"assets/image/veg_curry/Mix_Vegetable_Kofta.png"
+
+},
+  {
+    "id":4,
+    "productId":"4",
+    "productName":"Chole",
+    "initialPrice":100,
+    "productPrice":100,
+    "quantity":1,
+    "unitTag":"pac",
+    "image":"assets/image/veg_curry/Chole.png"
+},
+  {
+    "id":5,
+    "productId":"5",
+    "productName":"Matar_Paneer",
+    "initialPrice":110,
+    "productPrice":150,
+    "quantity":1,
+    "unitTag":"pac",
+    "image":"assets/image/veg_curry/Matar_Paneer.png"
+},
+{
+"id":6,
+"productId":"6",
+"productName":"Dum_Aloo",
+"initialPrice":110,
+"productPrice":110,
+"quantity":1,
+"unitTag":"pac",
+"image":"assets/image/veg_curry/Dum_Aloo.png"
+},
+  {
+    "id":7,
+    "productId":"7",
+    "productName":"aloo_paratha",
+    "initialPrice":69,
+    "productPrice":69,
+    "quantity":1,
+    "unitTag":"pac",
+    "image":"assets/image/veg_curry/aloo_paratha.png"
+
+  }
+]
