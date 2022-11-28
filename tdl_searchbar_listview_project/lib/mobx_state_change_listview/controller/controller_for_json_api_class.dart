@@ -1,8 +1,6 @@
 import 'dart:convert';
-
 import 'package:mobx/mobx.dart';
 import 'package:http/http.dart' as http;
-
 import '../model/model_class_for_apicall.dart';
 part 'controller_for_json_api_class.g.dart';
 
@@ -10,8 +8,6 @@ class ControllerJsonApiClass = _ControllerJsonApiClass
     with _$ControllerJsonApiClass;
 
 abstract class _ControllerJsonApiClass with Store {
-
-
   // _ControllerJsonApiClass() {
   //   fetchAlbum();
   // }
@@ -28,17 +24,23 @@ abstract class _ControllerJsonApiClass with Store {
     return null;
   }
 */
-  List<UserModel>? _data;
+  @observable
+   ObservableList<UserModel> data = ObservableList(); // do not add final modifier
 
-  Future<UserModel?> fetchAlbum() async {
-    final response =
-    (await http.get(Uri.parse("https://jsonplaceholder.typicode.com/users")));
+  @action
+  Future<List<UserModel>?> fetchAlbum() async {
+    final response = (await http
+        .get(Uri.parse("https://jsonplaceholder.typicode.com/users")));
     // final decodeddata=jsonDecode(response);
     if (response.statusCode == 200) {
       var decodeddata = json.decode(response.body);
-      _data = UserModel.fromJson(decodeddata) as List<
-          UserModel>?;
+      // data = (decodeddata as List).map((e) => UserModel.fromJson(e)).toList();
+      // data.clear();
+      data.clear();
 
+      data.addAll(
+          List<UserModel>.from(decodeddata.map((e) => UserModel.fromJson(e))));
+      return data;
       // if (response.statusCode == 200) {
       //   var res = json.decode(response.body) as List;
       //
@@ -51,5 +53,13 @@ abstract class _ControllerJsonApiClass with Store {
       //   throw Exception("failed to load album");
       // }
     }
+  }
+
+
+  @action
+  void removecontent(int index){
+    data.removeAt(index);
+
+
   }
 }

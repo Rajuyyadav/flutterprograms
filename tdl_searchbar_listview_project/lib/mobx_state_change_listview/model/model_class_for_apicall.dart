@@ -4,14 +4,10 @@ part 'model_class_for_apicall.g.dart';
 
 @JsonSerializable()
 class UserModelMain {
-
   final List<UserModel>? data;
-
   UserModelMain( this.data);
-
   factory UserModelMain.fromJson(Map<String, dynamic> json) =>
       _$UserModelMainFromJson(json);
-
   Map<String, dynamic> toJson() => _$UserModelMainToJson(this);
 }
 
