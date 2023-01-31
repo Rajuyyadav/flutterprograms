@@ -1,0 +1,37 @@
+[
+  {
+    "id": 101,
+    "name": "Real me ZX",
+    "price": 9899,
+    "rating": 4.3,
+    "noOfPurchase": 2455
+  },
+  {
+    "id": 102,
+    "name": "Vivo Y51",
+    "price": 7999,
+    "rating": 3.5,
+    "noOfPurchase": 430
+  },
+  {
+    "id": 103,
+    "name": "iPhone 14",
+    "price": 87999,
+    "rating": 4.5,
+    "noOfPurchase": 19
+  },
+  {
+    "id": 104,
+    "name": "Redmi Dual S",
+    "price": 9899,
+    "rating": 2.9,
+    "noOfPurchase": 2
+  },
+  {
+    "id": 105,
+    "name": "Nokia s59",
+    "price": 6499,
+    "rating": 3.9,
+    "noOfPurchase": 3429
+  }
+]
